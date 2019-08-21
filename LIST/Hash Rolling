@@ -1,3 +1,5 @@
+//issue is segmentation fault
+
 #include <iostream>
 #include<string>
 using namespace std;
