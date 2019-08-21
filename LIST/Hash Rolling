@@ -25,7 +25,7 @@ int main()
        thash=thash+int(s[i+p.size()-1]-'a')+1-int(s[i-1]-'a')-1;
        
        if(thash==ash){ cout<<s.substr(i,p.size())<<endl;
-                         flag=true;    }
+                         flag=true;     }
                                             }
                                             
     
