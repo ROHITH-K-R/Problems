@@ -4,10 +4,10 @@
 using namespace std; 
   
 void printSubsequences(int arr[], int n) 
-{ 
+{   
     /* Number of subsequences is (2**n -1)*/
-    unsigned int opsize = pow(2, n); 
-  
+    int opsize = (1<<n),counter; 
+    
     /* Run from counter 000..1 to 111..1*/
     for (int counter = 1; counter < opsize; counter++) 
     { 
