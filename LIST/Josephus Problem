@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+int fun(int n,int k){
+    if(n==1){return n;}
+    
+    return ((fun(n-1,k)+k-1)%n +1); //if index starts from 0:return (fun(n-1,k)+k)%n;
+}
+
+int main() {
+	int n=7,k=3,ans;
+	ans=fun(n,k);
+	cout<<ans;
+	return 0;
+}
