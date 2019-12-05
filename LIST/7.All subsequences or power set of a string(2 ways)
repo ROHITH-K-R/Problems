@@ -1,0 +1,66 @@
+/*  C++ code to generate all possible subsequences. 
+    Whithout recursion
+    Time Complexity O(n * 2^n) */
+#include<bits/stdc++.h> 
+using namespace std; 
+  
+void printSubsequences(int arr[], int n) 
+{   
+    /* Number of subsequences is (2**n -1)*/
+    int opsize = (1<<n),counter; 
+    
+    /* Run from counter 000..1 to 111..1*/
+    for (int counter = 1; counter < opsize; counter++) 
+    { 
+        for (int j = 0; j < n; j++) 
+        { 
+            /* Check if jth bit in the counter is set 
+                If set then print jth element from arr[] */
+            if (counter & (1<<j)) 
+                cout << arr[j] << " "; 
+        } 
+        cout << endl; 
+    } 
+} 
+  
+int main() 
+{ 
+    int arr[] = {1, 2, 3, 4}; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    cout << "All Non-empty Subsequences\n"; 
+    printSubsequences(arr, n); 
+    return 0; 
+} 
+
+==========================================================================================================================================
+/* Now code with Recursion*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+/* str : Stores input string
+   curr : Stores current subset
+   index : Index in current subset, curr  */
+void powerSet(string str, int index = 0,
+              string curr = "")
+{
+    int n = str.length();
+    if (index == n) {
+        cout << curr << endl;
+        return;
+    }
+
+    /* Two cases for every character
+     (i) We consider the character as part of current subset
+     (ii) We do not consider current character as part of current subset */
+     
+    powerSet(str, index + 1, curr + str[index]);
+    powerSet(str, index + 1, curr);
+}
+
+int main()
+{
+    string str = "abc";
+    powerSet(str);
+    return 0;
+}
