@@ -1,3 +1,4 @@
+// When Index starts from 1
 #include <iostream>
 using namespace std;
 int fun(int n,int k){
