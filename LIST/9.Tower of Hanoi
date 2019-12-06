@@ -22,3 +22,18 @@ int main()
     return 0;  
 }
 
+==========================================================================================================================================
+===========================================================================================================================================
+//If we are also intrested in the no of moves
+void toh(int N, int from, int to, int aux, long long &moves) {
+    if (N >= 1) {
+        // recursive call to move top disk from "from" to aux
+        toh(N - 1, from, aux, to, moves);
+        
+        cout << "move disk " << N << " from rod " << from << " to rod " << to << endl;
+        moves++;
+        
+        // recursive call to move top disk from aux to "to" 
+        toh(N - 1, aux, to, from, moves);
+    }
+}
