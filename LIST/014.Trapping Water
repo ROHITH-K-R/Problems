@@ -1,0 +1,42 @@
+// We have to find how many units of rain water can be trapped by the blocks placed adjacent to each other with the  
+// heights equal to the values of the elements of the given array 
+
+//Naive Method O(n^2)
+int TrappingWater(int a[], int n) 
+{   int res=0;
+   for(int i=1;i<n-1;i++)
+  {   
+      int lmax=a[i],rmax=a[i];
+    
+      for(int j=0;j<i;j++){  lmax=max(a[j],lmax); }
+     
+      for(int k=i+1;k<n;k++){  rmax=max(a[k],rmax);  }
+    
+      res+=min(lmax,rmax)-a[i];                            }
+       
+       return res;
+} 
+===================================================================================================================================
+===================================================================================================================================
+// Efficient Method O(n)
+
+int TrappingWater(int a[], int n) 
+{   int res=0;
+    int lmax[n],rmax[n];
+    
+    lmax[0]=a[0];
+    for(int j=1;j<n;j++){
+        lmax[j]=max(a[j],lmax[j-1]);
+    }
+    
+    rmax[n-1]=a[n-1];
+    for(int k=n-2;k>=0;k--){
+        rmax[k]=max(a[k],rmax[k+1]);
+    }
+    
+    for(int i=1;i<n-1;i++){
+        res+=min(lmax[i],rmax[i])-a[i]; 
+    }
+    
+return res;
+} 
