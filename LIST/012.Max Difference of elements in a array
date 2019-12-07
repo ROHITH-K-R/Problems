@@ -1,0 +1,29 @@
+// we have to find the max difference between any two elements of the array.(Such that dif=a[j]-a[i] and j>i)
+
+//Naive Method
+  
+int maxDifference(int a[], int n) 
+{  int res=0;
+   for(int i=0;i<n;i++){
+       for(int j=i+1;j<n;j++){
+           ax = max(res,(a[j]-a[i]));
+       }
+   }
+   return res;
+} 
+  
+  
+==========================================================================================================================================
+==========================================================================================================================================
+//Efficient Method
+
+int maxDifference(int a[], int n) 
+{  int res=a[1]-a[0];
+   int mi=a[0];
+   
+   for(int i=0;i<n;i++){
+       res = max(res,(a[i]-mi));
+       mi = min(mi,a[i]);
+   }
+   return res;
+} 
