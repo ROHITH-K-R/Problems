@@ -16,8 +16,8 @@ int window(int a[],int n,int k){
 ===========================================================================================================================================
 ===========================================================================================================================================
 
-/* Returns true if the there is a subarray of arr[] with a sum equal to 'sum' 
-otherwise returns false. Also, prints the result */
+/* Prints the sub array if the there is a subarray of arr[] with a sum equal to 'sum' 
+otherwise returns false. */
 int subArraySum(int arr[], int n, int sum) 
 { 
 	/* Initialize curr_sum as value of first element 
