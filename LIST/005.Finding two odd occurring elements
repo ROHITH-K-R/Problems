@@ -6,20 +6,21 @@ void Res(int arr[],int n){
     
   int i,XOR=0;
   int res,res1,res2;
+    
     for(i=0;i<n;i++){
         XOR = XOR^arr[i]; }
   
-  for(i=0;i<n;i++){
-    res = (XOR & ~(XOR-1));//Different from regular code we only leave out the last set bit 
+  res = (XOR & ~(XOR-1));// **~** -- Different from regular code we only leave out the last set bit 
+    
     for(i=0;i<n;i++){
         if((res & arr[i])!= 0){
             res1=res^arr[i];
         }
         else{res2 = res^arr[i];}
     }
+    
     cout<<res1<<' '<<res2<<endl;
-  }
-
+ 
 }
 int main() 
 { 
