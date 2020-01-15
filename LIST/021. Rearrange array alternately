@@ -1,0 +1,10 @@
+//Rearrange the array elements alternatively i.e first element should be max value,
+second should be min value, third should be second max, fourth should be second min and so on.//
+
+void rearrange(int *arr, int n) 
+{   reverse(arr,arr+n);
+	for(int i=1;i<n-1;i++){
+	    reverse(arr+i,arr+n);
+	}
+	   
+}
